@@ -7,7 +7,7 @@ import React from 'react'
 
 function AboutUs() {
   return (
-    <div>
+    <div id='aboutus'>
       <div>
         <p className='text-center text-[#191f25] font-bold text-[30px]'>Cryption</p>
         <p className='text-center text-[#191f25] md:font-extralight font-light md:text-[50px] text-[40px]'>Why choosing us</p>

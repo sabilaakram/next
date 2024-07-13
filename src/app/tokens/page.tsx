@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Text from '@/components/text'
+import Timeline from './component/page'
 
 function Tokens() {
   return (
@@ -31,6 +32,7 @@ function Tokens() {
         <Text nums={'04'} title={'Instant Operations'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam.'}/>
         </div>
     </div>
+    <Timeline/>
     </div>
   )
 }
