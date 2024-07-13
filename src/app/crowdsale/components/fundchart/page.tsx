@@ -2,6 +2,9 @@ import dynamic from 'next/dynamic';
 import { ApexOptions } from 'apexcharts';
 import ReactApexChart from 'react-apexcharts';
 
+const DynamicReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
+const isBrowser = typeof window !== 'undefined';
+
 const FundingAllocationChart = () => {
   const seriesData = [355, 150, 10, 0.04];
   const labelsData = [
@@ -51,8 +54,11 @@ const FundingAllocationChart = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <ReactApexChart options={options} series={seriesData} type="donut" width={300} />
-      <div className="flex flex-col items-start mt-4 font-normal font-Montserrat text-[12px]">
+          {isBrowser && (
+
+    <DynamicReactApexChart options={options} series={seriesData} type="donut" width={300} />
+          )}
+    <div className="flex flex-col items-start mt-4 font-normal font-Montserrat text-[12px]">
         {labelsData.map((label, index) => (
           <div key={index} className="flex items-center justify-start text-start mb-2 ">
             <div
